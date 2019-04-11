@@ -5,28 +5,17 @@
 }
 
 .App-header {
-  height: 3.25rem;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
 }
 
-.logo,
-.team-name,
-.team-idea {
-  padding: 0 1rem;
-  line-height: 3rem;
-  font-weight: 500;
-}
-
-.logo,
-.team-name {
+.App-header > div:not(:last-child) {
   position: relative;
 }
 
-.logo:after,
-.team-name:after {
+.App-header > div:not(:last-child):after {
   content: "";
   display: block;
   position: absolute;
@@ -37,20 +26,52 @@
   background-color: #dadede;
 }
 
-.logo {
+.App-header .logo,
+.App-header .customer,
+.App-header .team {
+  padding: 0 1rem;
+  line-height: 5rem;
+  font-weight: 500;
+}
+
+.App-header .logo {
   border-bottom: 0.25rem solid red;
 }
 
-.logo img {
-  height: 0.75rem;
-  line-height: 3rem;
+.App-header .logo img {
+  height: 1.25rem;
 }
 
-.team-name {
+.App-header .customer {
+  display: flex;
   border-bottom: 0.25rem solid #00467b;
+  font-size: 1.5rem;
+  line-height: 1;
 }
 
-.team-idea {
+.App-header .customer .label {
+  font-size: 0.75rem;
+  color: gray;
+  font-weight: 400;
+  margin-top: 1.125rem;
+}
+
+.App-header .customer .customer-name {
+  margin-top: 0.5rem;
+}
+
+.App-header .customer .emoji {
+  font-size: 3rem;
+  margin-top: 1.35rem;
+  margin-left: 1rem;
+}
+
+.App-header .team {
   border-bottom: 0.25rem solid #ebe5de;
+  text-align: right;
   flex-grow: 1;
+}
+
+.App-header .team span {
+  color: #7e9eb7;
 }

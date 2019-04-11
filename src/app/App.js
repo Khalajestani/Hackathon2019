@@ -12,9 +12,15 @@ class App extends Component {
           <div className="logo">
             <Image src={ExactLogo} verticalAlign="middle" />
           </div>
-          <div className="team-name">!Robots</div>
-          <div className="team-idea">
-            Real-time support<sup>2</sup>
+          <div className="customer">
+            <div>
+              <div class="label">Calling with</div>
+              <div class="customer-name">Phill Robinson</div>
+            </div>
+            <div className="emoji">🤠</div>
+          </div>
+          <div className="team">
+            Real-time support<sup>2</sup> <span>//</span> !Robots
           </div>
         </header>
         <Dashboard />
