@@ -14,12 +14,13 @@
   font-weight: 500;
 }
 
-.logo {
+.logo,
+.team-name {
   position: relative;
-  border-bottom: 0.25rem solid red;
 }
 
-.logo:after {
+.logo:after,
+.team-name:after {
   content: "";
   display: block;
   position: absolute;
@@ -30,6 +31,20 @@
   background-color: #dadede;
 }
 
+.logo {
+  border-bottom: 0.25rem solid red;
+}
+
+.logo img {
+  height: 0.75rem;
+  line-height: 3rem;
+}
+
 .team-name {
   border-bottom: 0.25rem solid #00467b;
+}
+
+.team-idea {
+  border-bottom: 0.25rem solid #ebe5de;
+  flex-grow: 1;
 }
