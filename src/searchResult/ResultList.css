@@ -7,3 +7,11 @@
 .ui.cards > .card > .content > .header:not(.ui) {
   font-weight: 500;
 }
+
+.content.extra {
+  /* text-align: right; */
+}
+
+.content.extra a:not(:last-child) {
+  margin-right: 1rem;
+}

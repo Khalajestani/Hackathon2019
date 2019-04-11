@@ -26,17 +26,31 @@ code {
     monospace;
 }
 
-body,
-h2 {
-  font-family: Apax, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+body {
+  font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
     "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
 }
 
-h2 {
+h2,
+.App-header,
+.speech-wrapper .bubble .name {
+  font-family: Apax, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
   font-weight: 500;
 }
 
 body ::-webkit-scrollbar {
   width: 0;
+}
+
+a {
+  color: #0650d0;
+}
+
+.ui.card,
+.ui.cards > .card {
+  box-shadow: none;
+  border: 1px solid #dadede;
 }

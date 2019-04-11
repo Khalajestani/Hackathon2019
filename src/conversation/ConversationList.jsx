@@ -5,7 +5,6 @@ import "./Conversation.css";
 import MockConversation from "./GetConversationText.js";
 
 const ConvList = [];
-var hasScrolled = false;
 
 const UpdateConvList = dataList => {
   dataList.forEach(element => {
@@ -53,11 +52,7 @@ class ConversationList extends Component {
 
   render() {
     return (
-      <div
-        className="speech-wrapper"
-        onClick={this.ClickMethod}
-        onScroll={(this.hasScrolled = true)}
-      >
+      <div className="speech-wrapper" onClick={this.ClickMethod}>
         {this.state.convList}
         <div
           style={{ float: "left", clear: "both" }}
