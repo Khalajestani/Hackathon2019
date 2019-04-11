@@ -1,18 +1,35 @@
-.App {
-  text-align: center;
-}
-
 .App-header {
-  background-color: #282c34;
-  min-height: 13vh;
+  height: 3.25rem;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
-.App-link {
-  color: #61dafb;
+.logo,
+.team-name,
+.team-idea {
+  padding: 0 1rem;
+  line-height: 3rem;
+  font-weight: 500;
+}
+
+.logo {
+  position: relative;
+  border-bottom: 0.25rem solid red;
+}
+
+.logo:after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.0625rem;
+  background-color: #dadede;
+}
+
+.team-name {
+  border-bottom: 0.25rem solid #00467b;
 }
