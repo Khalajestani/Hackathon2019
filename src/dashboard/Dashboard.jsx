@@ -12,14 +12,21 @@ class Dashboard extends Component {
         <Grid.Row>
           <Grid.Column>
             <h2>Conversation</h2>
-            <ConversationList />
+            <div className="column-content">
+              <ConversationList />
+            </div>
           </Grid.Column>
           <Grid.Column>
             <h2>Knowledge base</h2>
-            <ResultList />
+            <div className="column-content">
+              <ResultList />
+            </div>
           </Grid.Column>
           <Grid.Column>
             <h2>Support cases</h2>
+            <div className="column-content">
+              <ResultList />
+            </div>
           </Grid.Column>
         </Grid.Row>
       </Grid>

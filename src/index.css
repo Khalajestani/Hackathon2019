@@ -36,3 +36,7 @@ h2 {
 h2 {
   font-weight: 500;
 }
+
+body ::-webkit-scrollbar {
+  width: 0;
+}

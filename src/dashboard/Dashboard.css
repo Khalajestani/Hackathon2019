@@ -1,12 +1,32 @@
 .ui.grid {
   margin: 0;
+  overflow: hidden;
 }
 
 .ui.grid > .row {
   padding: 0;
+  height: 100%;
 }
 
 .ui.grid > .row > .column {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+h2,
+.column-content {
+  padding: 1rem;
+  margin-bottom: 0;
+}
+
+h2 {
+  border-bottom: 1px solid #e6ecf1;
+}
+
+.column-content {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-grow: 1;
 }
