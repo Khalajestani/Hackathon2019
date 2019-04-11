@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Grid } from "semantic-ui-react";
+import { Grid, Container } from "semantic-ui-react";
 import ResultList from "../searchResult/ResultList";
 import ConversationList from "../conversation/ConversationList.jsx";
 import "./Dashboard.css";

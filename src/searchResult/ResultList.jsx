@@ -1,10 +1,17 @@
 import React, { Component } from "react";
-import { Segment } from "semantic-ui-react";
+import { Card } from "semantic-ui-react";
 import MockResults from "./GetSearchResult.js";
 import GetSearchResult from "./SearchResultsAPI.js";
+import "./ResultList.css";
 
 const ResultNode = props => {
-  return <Segment>{props.result.Title}</Segment>;
+  return (
+    <Card>
+      <Card.Content>
+        <Card.Header>{props.result.Title}</Card.Header>
+      </Card.Content>
+    </Card>
+  );
 };
 
 const FoundResults = props => {
