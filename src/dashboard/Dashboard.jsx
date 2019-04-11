@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { Grid, Container } from "semantic-ui-react";
+import { Grid, Image } from "semantic-ui-react";
 import ResultList from "../searchResult/ResultList";
 import ConversationList from "../conversation/ConversationList.jsx";
+import SampleImage from "../resources/sampleImage.png";
+
 import "./Dashboard.css";
 
 class Dashboard extends Component {
@@ -10,6 +12,7 @@ class Dashboard extends Component {
       <Grid columns="three" divided>
         <Grid.Row>
           <Grid.Column>
+            <Image src={SampleImage} />
             <ConversationList />
           </Grid.Column>
           <Grid.Column>
