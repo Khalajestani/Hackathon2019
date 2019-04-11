@@ -1,8 +1,16 @@
 import React, { Component } from "react";
 import MockResults from "./GetSearchResult.js";
+import { Card } from "semantic-ui-react";
+import "./ResultList.css";
 
 const ResultNode = props => {
-  return <div>{props.result.Title}</div>;
+  return (
+    <Card>
+      <Card.Content>
+        <Card.Header>{props.result.Title}</Card.Header>
+      </Card.Content>
+    </Card>
+  );
 };
 
 const FoundResults = () => {
