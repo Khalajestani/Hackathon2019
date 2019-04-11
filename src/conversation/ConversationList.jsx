@@ -1,51 +1,58 @@
 import React, { Component } from "react";
-import { Segment } from "semantic-ui-react";
-import MockConversation from "./GetConversationText.js";
-import ConversationText from "./ConversationTextAPI.js";
+import ChatNode from "./ChatNode";
 import "./Conversation.css";
 
-const ChatNode = props => {
-  const cssClassBubble =
-    props.result.From === "Customer" ? "bubble" : "bubble alt";
-  const cssClassArrow =
-    props.result.From === "Customer" ? "bubble-arrow" : "bubble-arrow alt";
+import MockConversation from "./GetConversationText.js";
 
-  return (
-    <Segment>
-      <div className={cssClassBubble}>
-        <div className="txt">
-          <p className="name">{props.result.Name}</p>
-          <p className="message">{props.result.Text}</p>
-          <span className="timestamp">{props.result.Timestamp}</span>
-        </div>
-        <div className={cssClassArrow} />
-      </div>
-    </Segment>
-  );
+const ConvList = [];
+
+const UpdateConvList = dataList => {
+  dataList.forEach(element => {
+    ConvList.push(element);
+  });
+
+  return ConvList;
 };
 
-const ConversationTextList = props => {
-  return props.list.map((result, index) => (
+const RenderList = props => {
+  const conversation = props.list;
+
+  return conversation.map((result, index) => (
     <ChatNode key={index} result={result} />
   ));
 };
 
 class ConversationList extends Component {
-  textList = () => {
-    ConversationText()
-      .then(Response => {
-        return ConversationTextList(Response);
-      })
-      .catch(response => {
-        console.log("failed to get ConversationList - " + response);
-      });
-    return null;
-  };
+  constructor() {
+    super();
+    this.state = {
+      convList: []
+    };
+
+    // this.ClickMethod = this.ClickMethod.bind(this);
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      console.log(this.state.convList);
+      this.func();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  func() {
+    console.log("iterated");
+    UpdateConvList(MockConversation);
+    this.setState({ convList: <RenderList list={ConvList} /> });
+  }
 
   render() {
     return (
-      <div className="speech-wrapper">
-        <ConversationTextList list={MockConversation} />
+      <div className="speech-wrapper" onClick={this.ClickMethod}>
+        {this.state.convList}
       </div>
     );
   }
