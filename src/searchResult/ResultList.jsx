@@ -6,7 +6,7 @@ import "./ResultList.css";
 
 const ResultNode = props => {
   return (
-    <Card>
+    <Card fluid>
       <Card.Content>
         <Card.Header>{props.result.Title}</Card.Header>
       </Card.Content>
