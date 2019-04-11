@@ -5,6 +5,7 @@ import "./Conversation.css";
 import MockConversation from "./GetConversationText.js";
 
 const ConvList = [];
+var hasScrolled = false;
 
 const UpdateConvList = dataList => {
   dataList.forEach(element => {
@@ -47,15 +48,30 @@ class ConversationList extends Component {
     console.log("iterated");
     UpdateConvList(MockConversation);
     this.setState({ convList: <RenderList list={ConvList} /> });
+    this.scrollToBottom();
   }
 
   render() {
     return (
-      <div className="speech-wrapper" onClick={this.ClickMethod}>
+      <div
+        className="speech-wrapper"
+        onClick={this.ClickMethod}
+        onScroll={(this.hasScrolled = true)}
+      >
         {this.state.convList}
+        <div
+          style={{ float: "left", clear: "both" }}
+          ref={el => {
+            this.messagesEnd = el;
+          }}
+        />
       </div>
     );
   }
+
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  };
 }
 
 export default ConversationList;
