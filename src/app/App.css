@@ -1,18 +1,77 @@
 .App {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
 }
 
 .App-header {
-  background-color: #282c34;
-  min-height: 13vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
 }
 
-.App-link {
-  color: #61dafb;
+.App-header > div:not(:last-child) {
+  position: relative;
+}
+
+.App-header > div:not(:last-child):after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 0.0625rem;
+  background-color: #dadede;
+}
+
+.App-header .logo,
+.App-header .customer,
+.App-header .team {
+  padding: 0 1rem;
+  line-height: 5rem;
+  font-weight: 500;
+}
+
+.App-header .logo {
+  border-bottom: 0.25rem solid red;
+}
+
+.App-header .logo img {
+  height: 1.25rem;
+}
+
+.App-header .customer {
+  display: flex;
+  border-bottom: 0.25rem solid #00467b;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.App-header .customer .label {
+  font-size: 0.75rem;
+  color: gray;
+  font-weight: 400;
+  margin-top: 1.125rem;
+}
+
+.App-header .customer .customer-name {
+  margin-top: 0.5rem;
+}
+
+.App-header .customer .emoji {
+  font-size: 3rem;
+  margin-top: 1.35rem;
+  margin-left: 1rem;
+}
+
+.App-header .team {
+  border-bottom: 0.25rem solid #ebe5de;
+  text-align: right;
+  flex-grow: 1;
+}
+
+.App-header .team span {
+  color: #7e9eb7;
 }

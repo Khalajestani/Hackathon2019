@@ -32,8 +32,6 @@ class ConversationList extends Component {
     this.state = {
       convList: []
     };
-
-    // this.ClickMethod = this.ClickMethod.bind(this);
   }
 
   componentDidMount() {
@@ -67,15 +65,27 @@ class ConversationList extends Component {
       .catch(response => {
         console.log("failed to get support data" + response);
       });
+
+    this.scrollToBottom();
   }
 
   render() {
     return (
       <div className="speech-wrapper" onClick={this.ClickMethod}>
         {this.state.convList}
+        <div
+          style={{ float: "left", clear: "both" }}
+          ref={el => {
+            this.messagesEnd = el;
+          }}
+        />
       </div>
     );
   }
+
+  scrollToBottom = () => {
+    this.messagesEnd.scrollIntoView({ behavior: "smooth" });
+  };
 }
 
 export default ConversationList;

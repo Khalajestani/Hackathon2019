@@ -1,70 +1,81 @@
-.speech-wrapper {
-  padding: 50px 60px;
-}
 .speech-wrapper .bubble {
-  width: 240px;
+  width: 75%;
   height: auto;
   display: block;
-  background: #f5f5f5;
-  border-radius: 4px;
-  box-shadow: 2px 8px 5px #000;
+  background-color: #e6ecf1;
+  border-radius: 0.5rem;
   position: relative;
-  margin: 0 0 25px;
+  margin: 0 0 1rem;
 }
-.speech-wrapper .bubble.alt {
-  margin: 0 0 0 60px;
+
+.speech-wrapper .bubble.support {
+  margin-left: 25%;
+  background-color: #f2e7fb;
 }
-.speech-wrapper .bubble .txt {
-  padding: 8px 55px 8px 14px;
-}
-.speech-wrapper .bubble .txt .name {
-  font-weight: 600;
-  font-size: 12px;
-  margin: 0 0 4px;
-  color: #3498db;
-}
-.speech-wrapper .bubble .txt .name span {
-  font-weight: normal;
-  color: #b3b3b3;
-}
-.speech-wrapper .bubble .txt .name.alt {
-  color: #2ecc71;
-}
-.speech-wrapper .bubble .txt .message {
-  font-size: 12px;
+
+.speech-wrapper .bubble .name {
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: #00467b;
+  width: 100%;
+  flex-shrink: 0;
+  padding: 0.5rem 0.75rem 0;
   margin: 0;
-  color: #2b2b2b;
 }
+
+.speech-wrapper .bubble.support .name {
+  color: #8200df;
+}
+
+.speech-wrapper .bubble .txt {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  padding: 0.25rem 0.75rem 0.5rem;
+}
+
+.speech-wrapper .bubble .txt .message,
 .speech-wrapper .bubble .txt .timestamp {
-  font-size: 11px;
-  position: absolute;
-  bottom: 8px;
-  right: 10px;
+  line-height: 1.4;
+}
+
+.speech-wrapper .bubble .txt .message {
+  font-size: 0.875rem;
+  color: #2b2b2b;
+  flex-grow: 1;
+  padding-right: 0.5rem;
+}
+
+.speech-wrapper .bubble .txt .timestamp {
+  font-size: 0.75rem;
   text-transform: uppercase;
   color: #999;
+  flex-shrink: 0;
 }
+
 .speech-wrapper .bubble .bubble-arrow {
   position: absolute;
   width: 0;
-  bottom: 42px;
+  bottom: 1.5625rem;
   left: -16px;
   height: 0;
 }
-.speech-wrapper .bubble .bubble-arrow.alt {
+.speech-wrapper .bubble .bubble-arrow.support {
   right: -2px;
-  bottom: 40px;
+  bottom: 1.625rem;
   left: auto;
 }
 .speech-wrapper .bubble .bubble-arrow:after {
   content: "";
   position: absolute;
   border: 0 solid transparent;
-  border-top: 9px solid #f5f5f5;
+  border-top: 9px solid #e6ecf1;
   border-radius: 0 20px 0;
   width: 15px;
   height: 30px;
   transform: rotate(145deg);
 }
-.speech-wrapper .bubble .bubble-arrow.alt:after {
+.speech-wrapper .bubble .bubble-arrow.support:after {
   transform: rotate(45deg) scaleY(-1);
+  border-top: 9px solid #f2e7fb;
 }
