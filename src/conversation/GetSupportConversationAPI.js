@@ -1,7 +1,7 @@
 import Axios from "axios";
 
-const GetConversationText = () => {
-  const url = `http://b94a30bf.ngrok.io/api/Text`;
+const GetSupportConversationText = () => {
+  const url = `http://localhost:33711/api/Text`;
 
   return Axios.get(url)
     .then(response => {
@@ -12,4 +12,4 @@ const GetConversationText = () => {
     });
 };
 
-export default GetConversationText;
+export default GetSupportConversationText;
