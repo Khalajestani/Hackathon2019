@@ -1,8 +1,9 @@
 import React, { Component } from "react";
 import "./App.css";
 import Dashboard from "../dashboard/Dashboard";
-import { Image } from "semantic-ui-react";
+import { Image, Input } from "semantic-ui-react";
 import ExactLogo from "../resources/exact-logo.png";
+import SearchIcon from "../resources/search-icon.png";
 
 class App extends Component {
   render() {
@@ -20,6 +21,10 @@ class App extends Component {
             <div className="emoji">🤠</div>
           </div>
           <div className="team">
+            <div className="search">
+              <Image src={SearchIcon} className="search-icon" />
+              <Input placeholder="Search..." />
+            </div>
             Real-time support<sup>2</sup> <span>//</span> !Robots
           </div>
         </header>
