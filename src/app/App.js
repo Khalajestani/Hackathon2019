@@ -15,8 +15,8 @@ class App extends Component {
           </div>
           <div className="customer">
             <div>
-              <div class="label">Calling with</div>
-              <div class="customer-name">Phill Robinson</div>
+              <div className="label">Calling with</div>
+              <div className="customer-name">Phill Robinson</div>
             </div>
             <div className="emoji">🤠</div>
           </div>
