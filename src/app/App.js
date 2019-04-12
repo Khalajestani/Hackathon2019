@@ -48,7 +48,7 @@ class App extends Component {
               <Image src={SearchIcon} className="search-icon" />
               <Input placeholder="Search..." />
             </div>
-            Real-time support<sup>2</sup> <span>//</span> !Robots
+            RESA&nbsp;<span>//</span>&nbsp;!Robots
           </div>
         </header>
         <Dashboard />

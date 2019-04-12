@@ -28,6 +28,8 @@
 
 .App-header .logo,
 .App-header .customer,
+.App-header .callButton,
+.App-header .endCallButton,
 .App-header .team {
   padding: 0 1rem;
   line-height: 5rem;
@@ -126,13 +128,39 @@
 }
 
 .callButton {
-  padding: 7px;
-  padding-top: 30px;
-  background-color: rgb(18, 163, 18);
+  border-bottom: 0.25rem solid green;
 }
 
 .endCallButton {
-  padding: 7px;
-  padding-top: 30px;
-  background-color: red;
+  border-bottom: 0.25rem solid red;
+}
+
+.callButton i,
+.endCallButton i {
+  width: 3rem;
+  height: 3rem;
+  border: 2px solid grey;
+  border-radius: 50%;
+}
+
+.callButton i {
+  border-color: green;
+}
+
+.endCallButton i {
+  border-color: red;
+}
+
+.callButton i:before,
+.endCallButton i:before {
+  line-height: 2.9rem;
+  font-size: 1.3rem;
+}
+
+.callButton i:before {
+  color: green;
+}
+
+.endCallButton i:before {
+  color: red;
 }
