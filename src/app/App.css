@@ -75,3 +75,15 @@
 .App-header .team span {
   color: #7e9eb7;
 }
+
+.callButton {
+  padding: 7px;
+  padding-top: 30px;
+  background-color: rgb(18, 163, 18);
+}
+
+.endCallButton {
+  padding: 7px;
+  padding-top: 30px;
+  background-color: red;
+}
