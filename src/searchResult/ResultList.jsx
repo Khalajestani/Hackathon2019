@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { Card } from "semantic-ui-react";
-import MockResults from "./GetSearchResult.js";
 import GetSearchResult from "./SearchResultsAPI.js";
 import "./ResultList.css";
 
@@ -23,26 +22,50 @@ const ResultNode = props => {
 };
 
 const FoundResults = props => {
+  if (props.list === undefined || props.list.length === 0) {
+    return null;
+  }
+
   return props.list.map((result, index) => (
     <ResultNode key={index} result={result} />
   ));
 };
 
 class ResultList extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchList: []
+    };
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.searchResult();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
   searchResult = () => {
+    console.log("itterating search");
     GetSearchResult()
       .then(Response => {
-        return FoundResults(Response);
+        this.setState({
+          searchList: <FoundResults list={Response} />
+        });
       })
       .catch(response => {
         console.log("failed to get searchResults - " + response);
       });
+
     return null;
   };
 
   render() {
-    //return <div>{this.searchResult()}</div>;
-    return <FoundResults list={MockResults} />;
+    return this.state.searchList;
   }
 }
 

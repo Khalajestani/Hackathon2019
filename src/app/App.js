@@ -19,9 +19,9 @@ class App extends Component {
 
   answerCall() {
     if (this.state.callButtonClass === "endCallButton") {
-      StartConversation();
       this.setState({ callButtonClass: "callButton" });
     } else {
+      StartConversation();
       this.setState({ callButtonClass: "endCallButton" });
     }
   }

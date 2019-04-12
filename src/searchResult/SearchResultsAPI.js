@@ -1,15 +1,15 @@
 import Axios from "axios";
+import { GetSearchKey } from "./SearchKey.js";
 
 const GetSearchResults = () => {
-  const url = `wwwwwwww/signup`;
-  const body = {};
+  var url = `http://LT-16-192/SearchResults/api/questions`;
 
-  return Axios.post(url, body)
+  const searchKey = GetSearchKey();
+  url = `${url}/${searchKey}`;
+
+  return Axios.get(url)
     .then(response => {
-      return {
-        Registered: true,
-        Token: response.data.token
-      };
+      return response.data;
     })
     .catch(error => {
       return Promise.reject(new Error(error.response));

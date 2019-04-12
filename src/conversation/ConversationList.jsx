@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import ChatNode from "./ChatNode";
-import "./Conversation.css";
 import GetCallerConversationText from "./GetCallerConversationAPI.js";
 import GetSupportConversationText from "./GetSupportConversationAPI";
+import { UpdateSearchKey } from "../searchResult/SearchKey.js";
+import ChatNode from "./ChatNode";
+import "./Conversation.css";
 
 const ConvList = [];
 
@@ -10,6 +11,9 @@ const UpdateConvList = (dataList, caller) => {
   if (dataList.data === undefined || dataList.data.length === 0) {
     return ConvList;
   }
+
+  UpdateSearchKey(dataList.data[0].Text);
+
   dataList.data.forEach(element => {
     const record = { data: element, caller: caller };
     ConvList.push(record);

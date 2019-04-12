@@ -1,11 +1,36 @@
 import React, { Component } from "react";
-import { Grid, Image, Card } from "semantic-ui-react";
+import { Grid, Card } from "semantic-ui-react";
 import ResultList from "../searchResult/ResultList";
 import ConversationList from "../conversation/ConversationList.jsx";
+
+import { GetSearchKey } from "../searchResult/SearchKey.js";
 
 import "./Dashboard.css";
 
 class Dashboard extends Component {
+  constructor() {
+    super();
+    this.state = {
+      searchKey: ""
+    };
+
+    this.func = this.func.bind(this);
+  }
+
+  componentDidMount() {
+    this.interval = setInterval(() => {
+      this.func();
+    }, 1000);
+  }
+
+  componentWillUnmount() {
+    clearInterval(this.interval);
+  }
+
+  func() {
+    this.setState({ searchKey: GetSearchKey() });
+  }
+
   render() {
     return (
       <Grid columns="three" divided>
@@ -21,7 +46,7 @@ class Dashboard extends Component {
             <div className="column-content">
               <Card fluid>
                 <Card.Content>
-                  <h5>Results for: "btw aangifte doen"</h5>
+                  <h5>Results for: {this.state.searchKey}</h5>
                 </Card.Content>
                 <ResultList />
               </Card>
@@ -32,7 +57,7 @@ class Dashboard extends Component {
             <div className="column-content">
               <Card fluid>
                 <Card.Content>
-                  <h5>Results for: "btw aangifte doen"</h5>
+                  <h5>Results for: {this.state.searchKey}</h5>
                 </Card.Content>
                 <ResultList />
               </Card>
