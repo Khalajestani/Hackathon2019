@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const GetCallerConversationText = () => {
-  const url = `http://99f27a68.ngrok.io/api/Text`;
+  const url = `http://809b9e64.ngrok.io/api/Text`;
 
   return Axios.get(url)
     .then(response => {
